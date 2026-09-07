@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "agents": {
+    "Nexus": {"role": "executive-controller", "canAssign": true},
+    "Sirius": {"role": "orchestrator", "canAssign": true},
+    "Ana": {"role": "builder", "canAssign": false},
+    "Nova": {"role": "research", "canAssign": false},
+    "Creative": {"role": "creative", "canAssign": false},
+    "Forge": {"role": "testing", "canAssign": false},
+    "Sentinel": {"role": "security", "canAssign": false},
+    "Pilot": {"role": "operations", "canAssign": false},
+    "Evolver": {"role": "continuous-improvement", "canAssign": false},
+    "Oompa": {
+      "role": "senior-editor-auditor",
+      "canAssign": false,
+      "independent": true,
+      "canReject": true,
+      "canReopen": true,
+      "canEscalate": true
+    }
+  },
+  "rules": {
+    "githubCompletionLogRequired": true,
+    "evidenceRequired": true,
+    "oompaAuditRequired": true,
+    "productionApprovalRequired": true
+  }
+}
