@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "factory",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-09-05",
+  "workers_dev": true,
+  "d1_databases": [{ "binding": "FACTORY_DB", "database_name": "factory-db", "database_id": "45cbf5ef-6eb9-427f-9edf-22156556591e" }],
+  "kv_namespaces": [
+    { "binding": "FACTORY_TASKS_KV", "id": "860d9602be14459cb16e24cf1a7b0650" },
+    { "binding": "FACTORY_STATE_KV", "id": "2ca70f8bb01743648664551afcbcc0d5" }
+  ],
+  "queues": { "producers": [{ "binding": "FACTORY_TASKS", "queue": "factory-tasks" }] },
+  "vectorize": [{ "binding": "FACTORY_MEMORY", "index_name": "factory-memory" }],
+  "r2_buckets": [{ "binding": "FACTORY_BUCKET", "bucket_name": "nemotron-nexus-bucket" }],
+  "observability": { "enabled": true },
+  "triggers": { "crons": ["*/5 * * * *"] }
+}
